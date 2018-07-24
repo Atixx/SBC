@@ -12,7 +12,7 @@
   =>
     (assert (correlativa-cumplida-8604 si)))
 
-(defrule correlativas-8600
+(defrule correlativas-8607-8608-8610-8611
     "Correlativas directas Programacion"      ; comment
     (estado-8600 aprobado|final)
 
