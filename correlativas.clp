@@ -1,19 +1,19 @@
 (defrule correlativas-8602
-  "Correlativas Arq de computacion"      ; comment
+  "Correlativas Arq de computacion"
   (estado-8600 aprobado|final)
 
 =>
   (assert (correlativa-cumplida-8602 si)))
 
 (defrule correlativas-8604
-    "Correlativas Mate 2"      ; comment
+    "Correlativas Mate 2"
     (estado-8603 aprobado|final)
 
   =>
     (assert (correlativa-cumplida-8604 si)))
 
 (defrule correlativas-8607-8608-8610-8611
-    "Correlativas directas Programacion"      ; comment
+    "Correlativas directas Programacion"
     (estado-8600 aprobado|final)
 
   =>
@@ -24,7 +24,7 @@
 
 
 (defrule correlativas-8612
-    "Correlativas Intro SO"      ; comment
+    "Correlativas Intro SO"
     (estado-8600 aprobado|final)
     (estado-8602 aprobado|final)
 
@@ -32,7 +32,7 @@
     (assert (correlativa-cumplida-8612 si)))
 
 (defrule correlativas-8609
-    "Correlativas AyED"      ; comment
+    "Correlativas AyED"
     (estado-8600 aprobado|final)
     (estado-8604 aprobado|final)
     (estado-8605 aprobado|final)
