@@ -1,6 +1,6 @@
 (defrule correlativas-8602
   "Correlativas Arq de computacion"
-  (estado-8600 aprobado|final)
+  (estado-8601 aprobado|final)
 
 =>
   (assert (correlativa-cumplida-8602 si)))
@@ -128,7 +128,6 @@
 (defrule correlativas-8623
     "Correlativas IS3"
     (estado-8613 aprobado|final)
-    (estado-8621 aprobado|final)
     (estado-8615 aprobado|final)
     (estado-8617 aprobado|final)
 
@@ -190,15 +189,14 @@
 
 (defrule correlativas-8642
     "Correlativas Proyecto Final"
-    (estado-8622 aprobado|final)
     (estado-8614 aprobado|final)
-    (estado-8618 aprobado|final)
     (estado-8615 aprobado|final)
     (estado-8616 aprobado|final)
     (estado-8617 aprobado|final)
+    (estado-8618 aprobado|final)
     (estado-8619 aprobado|final)
-    (estado-8620 aprobado|final)
     (estado-8621 aprobado|final)
+    (estado-8622 aprobado|final)
 
   =>
     (assert (correlativa-cumplida-8642 si)))
