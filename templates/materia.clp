@@ -16,5 +16,4 @@
   (slot correlativas-cumplidas
     (allowed-values no si)
     (default no))
-  (multislot correlativas
-    (default ?NONE)))
+  (multislot correlativas))
