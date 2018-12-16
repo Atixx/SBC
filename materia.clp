@@ -14,10 +14,12 @@
 ;;     (default ?NONE))
   (slot correlativas-cumplidas
     (allowed-values no si)
-    (default no)
-    )
-    
-  (multislot correlativas))
+    (default no))  
+  (multislot correlativas)
+  (multislot cuatrimestre
+    (allowed-values primero segundo anual)
+    (default ?NONE))
+)
 
 
 (deftemplate update-materia
