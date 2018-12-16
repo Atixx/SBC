@@ -21,7 +21,11 @@
     (default ?NONE))
 )
 
-
 (deftemplate update-materia
   (slot codigo)
+)
+
+(deftemplate materias-cuatrimestre
+  (slot cuatrimestre)
+  ;; (multislot materias)
 )

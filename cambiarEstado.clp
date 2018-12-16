@@ -9,7 +9,18 @@
 
 (defrule cargar-tareas "carga tareas"
   (cargar-tareas 1)
-  ?which <- (materia (codigo ?c) (correlativas-cumplidas si) (estado bloqueado))
+  ?cuatri-actual <- (materias-cuatrimestre (cuatrimestre ?cuatri))
+  ?which <- (materia
+              (codigo ?c)
+              (correlativas-cumplidas si)
+              (estado bloqueado)
+              (cuatrimestre ?cuatri)
+            )
+  ;; ?cuatri-actual <- (materias-cuatrimestre (codigo ?c)
+  ;;                   (cuatrimestre )
+  ;;                   )
+
+  
   =>
   (assert (update-materia (codigo ?c)))
 )

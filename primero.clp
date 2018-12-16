@@ -65,3 +65,21 @@
         (cuatrimestre segundo)
     )
 )
+
+(deffacts primer-cuatrimestre
+  (materias-cuatrimestre
+    (cuatrimestre primero)
+    ;; (materias
+    ;;   8600 8601 8603 8605
+    ;; )
+  )
+)
+
+;; (deffacts segundo-cuatrimestre
+;;   (materias-cuatrimestre
+;;     (cuatrimestre segundo)
+;;     (materias
+;;       8602 8604 8606
+;;     )
+;;   )
+)
