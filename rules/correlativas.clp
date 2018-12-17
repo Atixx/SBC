@@ -1,202 +1,231 @@
 (defrule correlativas-8602
   "Correlativas Arq de computacion"
-  (estado-8601 aprobado|final)
-
+  ?Materia <- (materia(codigo 8602))
+  (materia(estado aprobado|final) (codigo 8601))
 =>
-  (assert (correlativa-cumplida-8602 si)))
-
+  (modify ?Materia (correlativas-cumplidas si))
+)
 (defrule correlativas-8604
     "Correlativas Mate 2"
-    (estado-8603 aprobado|final)
-
+    ?Materia <- (materia(codigo 8604))
+    (materia(estado aprobado|final) (codigo 8603))
   =>
-    (assert (correlativa-cumplida-8604 si)))
+    (modify ?Materia (correlativas-cumplidas si))
+)
 
 (defrule correlativas-8607-8608-8610-8611
     "Correlativas directas Programacion"
-    (estado-8600 aprobado|final)
+    ?Materia1 <- (materia(codigo 8607))
+    ?Materia2 <- (materia(codigo 8608))
+    ?Materia3 <- (materia(codigo 8610))
+    ?Materia4 <- (materia(codigo 8611))
+    (materia(estado aprobado|final) (codigo 8600))
 
   =>
-    (assert (correlativa-cumplida-8607 si))
-    (assert (correlativa-cumplida-8608 si))
-    (assert (correlativa-cumplida-8610 si))
-    (assert (correlativa-cumplida-8611 si)))
+    (modify ?Materia1 (correlativas-cumplidas si))
+    (modify ?Materia2 (correlativas-cumplidas si))
+    (modify ?Materia3 (correlativas-cumplidas si))
+    (modify ?Materia4 (correlativas-cumplidas si))
+)
 
 
 (defrule correlativas-8612
     "Correlativas Intro SO"
-    (estado-8600 aprobado|final)
-    (estado-8602 aprobado|final)
-
+    ?Materia1 <- (materia(codigo 8612))
+    (materia(estado aprobado|final) (codigo 8600))
+    (materia(estado aprobado|final) (codigo 8602))
   =>
-    (assert (correlativa-cumplida-8612 si)))
+    (modify ?Materia1 (correlativas-cumplidas si))
+)
 
 (defrule correlativas-8609
     "Correlativas AyED"
-    (estado-8600 aprobado|final)
-    (estado-8604 aprobado|final)
-    (estado-8605 aprobado|final)
-
+    ?Materia1 <- (materia(codigo 8609))
+    (materia(estado aprobado|final) (codigo 8600))
+    (materia(estado aprobado|final) (codigo 8604))
+    (materia(estado aprobado|final) (codigo 8605))
   =>
-    (assert (correlativa-cumplida-8609 si)))
+    (modify ?Materia1 (correlativas-cumplidas si))
+)
 
 (defrule correlativas-6813
     "Correlativas Mate3"
-    (estado-8604 aprobado|final)
+    ?Materia1 <- (materia(codigo 8613))
+    (materia(estado aprobado|final) (codigo 8604))
 
   =>
-    (assert (correlativa-cumplida-8613 si)))
+    (modify ?Materia1 (correlativas-cumplidas si))
+)
 
 (defrule correlativas-6822
     "Correlativas Redes y comunicaciones"
-    (estado-8604 aprobado|final)
-    (estado-8612 aprobado|final)
-
+    ?Materia1 <- (materia(codigo 8622))
+    (materia(estado aprobado|final) (codigo 8604))
+    (materia(estado aprobado|final) (codigo 8612))
   =>
-    (assert (correlativa-cumplida-8622 si)))
+    (modify ?Materia1 (correlativas-cumplidas si))
+)
 
 (defrule correlativas-8615
     "Correlativas IS2"
-    (estado-8607 aprobado|final)
-
+    ?Materia1 <- (materia(codigo 8615))
+    (materia(estado aprobado|final) (codigo 8607))
   =>
-    (assert (correlativa-cumplida-8615 si)))
+    (modify ?Materia1 (correlativas-cumplidas si))
+)
 
 (defrule correlativas-8617
     "Correlativas SyO"
-    (estado-8607 aprobado|final)
-    (estado-8608 aprobado|final)
+    ?Materia1 <- (materia(codigo 8617))
+    (materia(estado aprobado|final) (codigo 8607))
+    (materia(estado aprobado|final) (codigo 8608))
 
   =>
-    (assert (correlativa-cumplida-8617 si)))
+    (modify ?Materia1 (correlativas-cumplidas si))
+)
 
 (defrule correlativas-8619
     "Correlativas Proyecto software"
-    (estado-8607 aprobado|final)
-    (estado-8608 aprobado|final)
-    (estado-8609 aprobado|final)
-    (estado-8611 aprobado|final)
+    ?Materia1 <- (materia(codigo 8619))
+    (materia(estado aprobado|final) (codigo 8607))
+    (materia(estado aprobado|final) (codigo 8608))
+    (materia(estado aprobado|final) (codigo 8609))
+    (materia(estado aprobado|final) (codigo 8611))
 
   =>
-    (assert (correlativa-cumplida-8619 si)))
+    (modify ?Materia1 (correlativas-cumplidas si))
+)
 
 (defrule correlativas-8618
     "Correlativas DB1"
-    (estado-8608 aprobado|final)
+    ?Materia1 <- (materia(codigo 8618))
+    (materia(estado aprobado|final) (codigo 8608))
 
   =>
-    (assert (correlativa-cumplida-8618 si)))
+    (modify ?Materia1 (correlativas-cumplidas si))
+)
 
-(defrule correlativas-8610
+(defrule correlativas-8616
     "Correlativas OO2"
-    (estado-8610 aprobado|final)
-
+    ?Materia1 <- (materia(codigo 8616))
+    (materia(estado aprobado|final) (codigo 8610))
   =>
-    (assert (correlativa-cumplida-8616 si)))
+    (modify ?Materia1 (correlativas-cumplidas si))
+)
 
 (defrule correlativas-8621
     "Correlativas Conceptos y Paradigmas"
-    (estado-8611 aprobado|final)
-    (estado-8609 aprobado|final)
-
+    (materia (estado aprobado|final) (codigo 8611)) 
+    (materia (estado aprobado|final) (codigo 8609)) 
+    ?Materia <- (materia(codigo 8621))
   =>
-    (assert (correlativa-cumplida-8621 si)))
+    (modify ?Materia (correlativas-cumplidas si))
+)  
 
 (defrule correlativas-8614
     "Correlativas Concurrente"
-    (estado-8611 aprobado|final)
-    (estado-8612 aprobado|final)
-
+    (materia (estado aprobado|final) (codigo 8611)) 
+    (materia (estado aprobado|final) (codigo 8612)) 
+    ?Materia <- (materia(codigo 8614))
   =>
-    (assert (correlativa-cumplida-8614 si)))
-
+    (modify ?Materia (correlativas-cumplidas si))
+)  
 (defrule correlativas-8640
     "Correlativas Probabilidad"
-    (estado-8613 aprobado|final)
-
+    (materia (estado aprobado|final) (codigo 8613)) 
+    ?Materia <- (materia(codigo 8640))
   =>
-    (assert (correlativa-cumplida-8640 si)))
-
+    (modify ?Materia (correlativas-cumplidas si))
+)  
 (defrule correlativas-8625
     "Correlativas Fundamentos"
-    (estado-8613 aprobado|final)
-    (estado-8621 aprobado|final)
-
+    (materia (estado aprobado|final) (codigo 8613)) 
+    (materia (estado aprobado|final) (codigo 8621)) 
+    ?Materia <- (materia(codigo 8625))
   =>
-    (assert (correlativa-cumplida-8625 si)))
-
+    (modify ?Materia (correlativas-cumplidas si))
+)  
 (defrule correlativas-8623
     "Correlativas IS3"
-    (estado-8613 aprobado|final)
-    (estado-8615 aprobado|final)
-    (estado-8617 aprobado|final)
-
+    (materia (estado aprobado|final) (codigo 8613)) 
+    (materia (estado aprobado|final) (codigo 8615)) 
+    (materia (estado aprobado|final) (codigo 8617))     
+    ?Materia <- (materia(codigo 8623))
   =>
-    (assert (correlativa-cumplida-8623 si)))
-
+    (modify ?Materia (correlativas-cumplidas si))
+)  
 (defrule correlativas-8624
     "Correlativas BD2"
-    (estado-8618 aprobado|final)
-
+    (materia (estado aprobado|final) (codigo 8618)) 
+    ?Materia <- (materia(codigo 8624))
   =>
-    (assert (correlativa-cumplida-8624 si)))
+    (modify ?Materia (correlativas-cumplidas si))
+)  
 
 (defrule correlativas-8641
     "Correlativas Discreta"
-    (estado-8640 aprobado|final)
-
+    (materia (estado aprobado|final) (codigo 8640)) 
+    ?Materia <- (materia(codigo 8641))
   =>
-    (assert (correlativa-cumplida-8641 si)))
+    (modify ?Materia (correlativas-cumplidas si))
+)
 
 (defrule correlativas-8636
     "Correlativas Optativa: Algoritmos y lenguajes"
-    (estado-8621 aprobado|final)
-
+    ?Materia <- (materia(codigo 8636))
+    (materia (estado aprobado|final) (codigo 8621)) 
   =>
-    (assert (correlativa-cumplida-8636 si)))
+    (modify ?Materia (correlativas-cumplidas si))
+)
 
 (defrule correlativas-8629
     "Correlativas Aspectos legales"
-    (estado-8619 aprobado|final)
-
+    ?Materia <- (materia(codigo 8629))
+    (materia (estado aprobado|final) (codigo 8619))    
   =>
-    (assert (correlativa-cumplida-8629 si)))
+    (modify ?Materia (correlativas-cumplidas si))
+)
 
 (defrule correlativas-8637
     "Correlativas Optativa: IS, BD y SI"
-    (estado-8623 aprobado|final)
-
+    ?Materia <- (materia(codigo 8637))
+    (materia (estado aprobado|final) (codigo 8623))
   =>
-    (assert (correlativa-cumplida-8637 si)))
+    (modify ?Materia (correlativas-cumplidas si))
+)
 
 (defrule correlativas-8626-8635
     "Correlativas SO + Optativa: Arq, SO y redes"
-    (estado-8622 aprobado|final)
-
+    ?Materia1 <- (materia(codigo 8626))
+    ?Materia2 <- (materia(codigo 8635))
+    (materia (estado aprobado|final) (codigo 8622))
   =>
-    (assert (correlativa-cumplida-8626 si))
-    (assert (correlativa-cumplida-8635 si)))
+    (modify ?Materia1 (correlativas-cumplidas si))
+    (modify ?Materia2 (correlativas-cumplidas si))
+)
 
 (defrule correlativas-8627
     "Correlativas Distribuidos"
-    (estado-8622 aprobado|final)
-    (estado-8614 aprobado|final)
-    (estado-8618 aprobado|final)
-
+    ?Materia <- (materia(codigo 8627))
+    (materia (estado aprobado|final) (codigo 8622))
+    (materia (estado aprobado|final) (codigo 8614))
+    (materia (estado aprobado|final) (codigo 8618))
   =>
-    (assert (correlativa-cumplida-8627 si)))
+    (modify ?Materia (correlativas-cumplidas si))
+)
 
 
 (defrule correlativas-8642
     "Correlativas Proyecto Final"
-    (estado-8614 aprobado|final)
-    (estado-8615 aprobado|final)
-    (estado-8616 aprobado|final)
-    (estado-8617 aprobado|final)
-    (estado-8618 aprobado|final)
-    (estado-8619 aprobado|final)
-    (estado-8621 aprobado|final)
-    (estado-8622 aprobado|final)
-
+    ?Materia <- (materia(codigo 8642))
+    (materia (estado aprobado|final) (codigo 8614))
+    (materia (estado aprobado|final) (codigo 8615))
+    (materia (estado aprobado|final) (codigo 8616))
+    (materia (estado aprobado|final) (codigo 8617))
+    (materia (estado aprobado|final) (codigo 8618))
+    (materia (estado aprobado|final) (codigo 8619))
+    (materia (estado aprobado|final) (codigo 8621))
+    (materia (estado aprobado|final) (codigo 8622))
   =>
-    (assert (correlativa-cumplida-8642 si)))
+    (modify ?Materia (correlativas-cumplidas si))
+)
