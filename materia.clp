@@ -5,13 +5,10 @@
   (slot estado
     (allowed-values bloqueado en-curso cursable aprobado final)
     (default bloqueado))
-;;   (slot carga-horaria
-;;     (allowed-integers 4 6)
-;;     (default 6))
-;;   (slot complejidad
-;;     (type INTEGER)
-;;     (range 1 5)
-;;     (default ?NONE))
+  (slot anio
+    (type INTEGER)
+    (range 1 5)
+    (default ?NONE))
   (slot correlativas-cumplidas
     (allowed-values no si)
     (default no))  
@@ -25,7 +22,14 @@
   (slot codigo)
 )
 
+(deftemplate update-correlativas 
+  (slot codigo)
+)
+
 (deftemplate materias-cuatrimestre
   (slot cuatrimestre)
-  ;; (multislot materias)
+)
+
+(deftemplate materias-anio
+  (slot anio)
 )

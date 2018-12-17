@@ -4,7 +4,7 @@
   ?Materia <- (materia (codigo ?c))
   =>
   (retract ?tareaCambio)
-  (modify ?Materia (estado cursable))
+  (modify ?Materia (estado aprobado))
 )
 
 (defrule cargar-tareas "carga tareas"
@@ -16,11 +16,6 @@
               (estado bloqueado)
               (cuatrimestre ?cuatri)
             )
-  ;; ?cuatri-actual <- (materias-cuatrimestre (codigo ?c)
-  ;;                   (cuatrimestre )
-  ;;                   )
-
-  
   =>
   (assert (update-materia (codigo ?c)))
 )
